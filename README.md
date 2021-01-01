@@ -59,7 +59,8 @@
     EDITOR=nano visudo
 
 ## Refind
-    pacman -S refind
+    pacman -S refind 
+    pacman -S  efibootmgr dosfstools os-prober mtools
     mkdir /boot/EFI
     mount /dev/nvme0n1p1 /boot/EFI
     refind-install --usedefault /dev/nvme0n1p1 --alldrivers
@@ -102,9 +103,14 @@
 
 ## Refresh the repos then grab the packages
     $ sudo pacman -Sy
-    $ sudo pacman -S linux-surface linux-surface-headers iptsd libwacom-surface
+    $ sudo pacman -S linux-surface linux-surface-headers iptsd libwacom-surface intel-ucode
     $ sudo systemctl enable iptsd
-    
+
+## 
+        || /etc/mkinitcpio.conf  ||
+
+        MODULES=(... i915 ...)
+
 ## If using grub
     $ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
