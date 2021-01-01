@@ -92,7 +92,7 @@
     umount -a
     reboot
     
-### Surface patches
+# Surface patches
 
 ## Import the keys used to sign packages, then verify them and sign
     $ wget -qO - https://raw.githubusercontent.com/linux-surface/linux-surface/master/pkg/keys/surface.asc | sudo pacman-key --add -
