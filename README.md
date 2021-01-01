@@ -106,7 +106,7 @@
     $ sudo pacman -S linux-surface linux-surface-headers iptsd libwacom-surface intel-ucode
     $ sudo systemctl enable iptsd
 
-## 
+## Enable early KMS to fix certain xorg issues on surface devices
         || /etc/mkinitcpio.conf  ||
 
         MODULES=(... i915 ...)
